@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package main;
 
-/**
- *
- * @author Mágori Ferenc
- */
+import java.util.Scanner;
+
 public class JatekIndito {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
-}
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Add meg a neved: ");
+        String nev = scanner.nextLine();
+
+        CsigaVersenyJatek verseny = new CsigaVersenyJatek(nev);
+        verseny.start();
+
+    }//main
+
+}//class
