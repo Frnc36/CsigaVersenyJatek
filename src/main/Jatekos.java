@@ -16,6 +16,14 @@ public class Jatekos {
         return nev;
     }
 
+    public int getFogad() {
+        return fogad;
+    }
+
+    public String getSZINEK() {
+        return SZINEK[fogad];
+    }
+    
     public void fogadas() {
         Scanner scanner = new Scanner(System.in);
         System.out.print(nev + ", melyik csigára 🐌 fogadsz? ");
@@ -29,4 +37,4 @@ public class Jatekos {
         System.out.println(nev + " a " + SZINEK[fogad] + " csigára fogadott.");
     }
 
-}
+}//class
