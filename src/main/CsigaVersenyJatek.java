@@ -25,13 +25,7 @@ public class CsigaVersenyJatek {
         this.jatekos = jatekos;
     }
 
-    private void rajzolCsiga(String szin, int tav, String szinezes) {
-        System.out.print(szinezes+szin + ": ");
-        for (int i = 0; i < tav; i++) {
-            System.out.print("-");
-        }
-        System.out.println("🐌"+RESET);
-    }
+
 
     public void start() {
         System.out.println("=== CSIGAVERSENY ===");
