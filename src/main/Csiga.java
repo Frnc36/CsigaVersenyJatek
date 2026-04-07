@@ -14,14 +14,6 @@ public class Csiga {
         this.tav = 0;
     }
 
-    public void megy(boolean gyorsitott) {
-        int lepes = RND.nextInt(4); // 0..3
-        if (gyorsitott) {
-            lepes *= 2;
-        }
-        tav += lepes;
-    }
-
     public int getTav() {
         return tav;
     }
@@ -33,4 +25,12 @@ public class Csiga {
     public void reset() {
         tav = 0;
     }
+    public void megy(boolean gyorsitott) {
+        int lepes = RND.nextInt(4); // 0..3
+        if (gyorsitott) {
+            lepes *= 2;
+        }
+        tav += lepes;
+    }
+
 }//class

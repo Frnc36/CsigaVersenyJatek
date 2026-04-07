@@ -6,7 +6,13 @@ public class Jatekos {
 
     private String nev;
     private int fogad;
-    private static final String[] SZINEK = {"piros", "kék", "zöld"};
+    private static final String[] SZINEK = {"piros", "Zöld", "kék"};
+
+    public Jatekos() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Add meg a neved: ");
+        this.nev = scanner.nextLine();
+    }
 
     public Jatekos(String nev) {
         this.nev = nev;
@@ -23,11 +29,11 @@ public class Jatekos {
     public String getSZINEK() {
         return SZINEK[fogad];
     }
-    
+
     public void fogadas() {
         Scanner scanner = new Scanner(System.in);
         System.out.print(nev + ", melyik csigára 🐌 fogadsz? ");
-        System.out.print("(0=piros, 1=zöld, 2=kék): ");
+        System.out.print("("+CsigaVersenyJatek.PIROS + "0=piros," + CsigaVersenyJatek.RESET + CsigaVersenyJatek.ZOLD + " 1=zöld," + CsigaVersenyJatek.RESET + CsigaVersenyJatek.KEK + " 2=kék" + CsigaVersenyJatek.RESET+"): ");
         fogad = scanner.nextInt();
         // Biztosítjuk, hogy érvényes tipp legyen
         while (fogad < 0 || fogad > 2) {
