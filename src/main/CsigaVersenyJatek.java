@@ -54,8 +54,21 @@ public class CsigaVersenyJatek {
             rajzolCsiga("kék", cs3.getTav(), KEK);
             System.out.println();
         }
+        System.out.println("A verseny vége!");
+
+        String gyoztesSzin = gyoztesSzin();
 
     }//start()
+
+    private String gyoztesSzin() {
+        if (cs1.getTav() >= cs2.getTav() && cs1.getTav() >= cs3.getTav()) {
+            return "piros";
+        } else if (cs2.getTav() >= cs1.getTav() && cs2.getTav() >= cs3.getTav()) {
+            return "zöld";
+        } else {
+            return "kék";
+        }
+    }
 
     private Csiga gyositoAd() {
         boolean vanGyorsito = RND.nextInt(100) < GYORSITO_ESELY;
