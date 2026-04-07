@@ -24,13 +24,13 @@ public class CsigaVersenyJatek {
         cs3 = new Csiga("kék");
         this.jatekos = jatekos;
     }
-    
+
     private void rajzolCsiga(String szin, int tav, String szinezes) {
-        System.out.print(szinezes+szin + ": ");
+        System.out.print(szinezes + szin + ": ");
         for (int i = 0; i < tav; i++) {
             System.out.print("-");
         }
-        System.out.println("🐌"+RESET);
+        System.out.println("🐌" + RESET);
     }
 
     public void start() {
@@ -58,7 +58,21 @@ public class CsigaVersenyJatek {
 
         String gyoztesSzin = gyoztesSzin();
 
+        System.out.println("A győztes csiga: " + gyoztesSzin);
+
+        gyoztesKezeles(gyoztesSzin);
+
     }//start()
+
+    private void gyoztesKezeles(String gyoztesSzin) {
+        String fogadottSzin = jatekos.getSZINEK();
+        System.out.print(jatekos.getNev() + ", " + fogadottSzin + "csigára-ra fogadtál, ");
+        if (fogadottSzin.equals(gyoztesSzin)) {
+            System.out.println("NYERTÉL!");
+        } else {
+            System.out.println("VESZTETTÉL!");
+        }
+    }
 
     private String gyoztesSzin() {
         if (cs1.getTav() >= cs2.getTav() && cs1.getTav() >= cs3.getTav()) {
@@ -75,16 +89,30 @@ public class CsigaVersenyJatek {
         Csiga gyorsitottCsiga = null;
         if (vanGyorsito) {
             int melyik = RND.nextInt(3);
-            if (melyik == 0) {
-                gyorsitottCsiga = cs1;
-                System.out.println("Gyorsítót kap: piros");
-            } else if (melyik == 1) {
-                gyorsitottCsiga = cs2;
-                System.out.println("Gyorsítót kap: zöld");
-            } else {
-                gyorsitottCsiga = cs3;
-                System.out.println("Gyorsítót kap: kék");
+            switch (melyik) {
+                case 0:
+                    gyorsitottCsiga = cs1;
+                    System.out.println("Gyorsítót kap: piros");
+                    break;
+                case 1:
+                    gyorsitottCsiga = cs2;
+                    System.out.println("Gyorsítót kap: zöld");
+                    break;
+                default:
+                    gyorsitottCsiga = cs3;
+                    System.out.println("Gyorsítót kap: kék");
+                    break;
             }
+//            if (melyik == 0) {
+//                gyorsitottCsiga = cs1;
+//                System.out.println("Gyorsítót kap: piros");
+//            } else if (melyik == 1) {
+//                gyorsitottCsiga = cs2;
+//                System.out.println("Gyorsítót kap: zöld");
+//            } else {
+//                gyorsitottCsiga = cs3;
+//                System.out.println("Gyorsítót kap: kék");
+//            }
         } else {
             System.out.println("Gyorsítót kap: -");
         }
